@@ -1,1 +1,25 @@
-<p>nav-bar works!</p>
+<div class="nav">
+  <div [ngClass]="(navOpen$ | async) ? 'nav-open' : 'nav-close'">
+    <button mat-icon-button (click)="toggleNav()" class="nav-btn">
+      <mat-icon *ngIf="navOpen$ | async">close</mat-icon>
+      <mat-icon *ngIf="!(navOpen$ | async)">menu</mat-icon>
+    </button>
+    <ul>
+      <li>
+        <a [routerLink]="['/ressources']" routerLinkActive="router-link-active"
+          >Ressources</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['/chat']" routerLinkActive="router-link-active"
+          >Chat Etudiant</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['/about']" routerLinkActive="router-link-active"
+          >A propos</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>

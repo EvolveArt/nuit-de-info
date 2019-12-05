@@ -7,9 +7,9 @@ import { RessourcesComponent } from "./ressources/ressources.component";
 
 const routes: Routes = [
   { path: "", component: HomePageComponent },
-  { path: "/chat", component: ChatEtudiantComponent },
-  { path: "/about", component: AboutPageComponent },
-  { path: "/ressources", component: RessourcesComponent }
+  { path: "chat", component: ChatEtudiantComponent },
+  { path: "about", component: AboutPageComponent },
+  { path: "ressources", component: RessourcesComponent }
 ];
 
 @NgModule({

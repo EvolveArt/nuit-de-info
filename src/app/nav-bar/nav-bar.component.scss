@@ -1,0 +1,51 @@
+$anim-duration: 0.5s;
+
+.nav {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  display: inline-block;
+  position: absolute;
+  background-color: white;
+  height: 50%;
+  margin-top: 50px;
+  transform: skew(0deg, -5deg);
+  -ms-transform: skew(0deg, -10deg);
+  -webkit-transform: skew(0deg, -5deg);
+
+  ul {
+    list-style-type: none;
+  }
+  li {
+    margin: 2em;
+    text-decoration: none;
+  }
+  a,
+  a:focus,
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+
+  .nav-btn {
+    position: absolute;
+    top: 2%;
+    right: 0;
+  }
+}
+
+.nav-open {
+  width: 30vw;
+  transition: width $anim-duration;
+  ul {
+    transition: opacity $anim-duration + 1 ease-in-out;
+  }
+}
+
+.nav-close {
+  width: 50px;
+  transition: width $anim-duration;
+
+  ul {
+    opacity: 0;
+  }
+}

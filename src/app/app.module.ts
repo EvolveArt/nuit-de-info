@@ -1,14 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { ChatboxComponent } from './chatbox/chatbox.component';
-import { ChatEtudiantComponent } from './chat-etudiant/chat-etudiant.component';
-import { AboutPageComponent } from './about-page/about-page.component';
-import { RessourcesComponent } from './ressources/ressources.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { NavBarComponent } from "./nav-bar/nav-bar.component";
+import { HomePageComponent } from "./home-page/home-page.component";
+import { ChatboxComponent } from "./chatbox/chatbox.component";
+import { ChatEtudiantComponent } from "./chat-etudiant/chat-etudiant.component";
+import { AboutPageComponent } from "./about-page/about-page.component";
+import { RessourcesComponent } from "./ressources/ressources.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatButtonModule, MatIconModule } from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -22,9 +24,12 @@ import { RessourcesComponent } from './ressources/ressources.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
