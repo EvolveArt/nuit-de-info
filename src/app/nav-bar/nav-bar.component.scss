@@ -2,7 +2,7 @@ $anim-duration: 0.5s;
 
 .nav {
   font-family: "Roboto", sans-serif;
-  font-size: 3rem;
+  font-size: 2em;
   display: inline-block;
   position: absolute;
   background-color: white;
@@ -33,19 +33,40 @@ $anim-duration: 0.5s;
   }
 }
 
-.nav-open {
-  width: 30vw;
-  transition: width $anim-duration;
-  ul {
-    transition: opacity $anim-duration + 1 ease-in-out;
+@media only screen and (min-width: 1920px) {
+  .nav-open {
+    width: 20vw;
+    transition: width $anim-duration;
+    ul {
+      transition: opacity $anim-duration + 1 ease-in-out;
+    }
+  }
+
+  .nav-close {
+    width: 50px;
+    transition: width $anim-duration;
+
+    ul {
+      opacity: 0;
+    }
   }
 }
 
-.nav-close {
-  width: 50px;
-  transition: width $anim-duration;
+@media only screen and (max-width: 1920px) {
+  .nav-open {
+    width: 100vw;
+    transition: width $anim-duration;
+    ul {
+      transition: opacity $anim-duration + 1 ease-in-out;
+    }
+  }
 
-  ul {
-    opacity: 0;
+  .nav-close {
+    width: 50px;
+    transition: width $anim-duration;
+
+    ul {
+      opacity: 0;
+    }
   }
 }
