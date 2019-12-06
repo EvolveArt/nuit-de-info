@@ -10,6 +10,7 @@
     fxLayoutAlign="center center"
     fxLayout.lt-md="column"
     fxLayoutAlign.lt-md="start end"
+    *ngIf="!chatOn"
   >
     <mat-form-field fxFlex.gt-md="40%">
       <input
@@ -31,4 +32,61 @@
       Parler !
     </button>
   </form>
+
+  <div class="chat-container" *ngIf="chatOn">
+    <div class="main-card">
+      <mat-list class="chat-list">
+        <mat-list-item
+          *ngFor="let message of messages"
+          [ngClass]="[
+            message.action === undefined && message.from.id === user.id
+              ? 'chat-list-item'
+              : ''
+          ]"
+        >
+          <h4 mat-line *ngIf="message.action === undefined">
+            <b>{{ message.from.name }}</b
+            >,<i>{{ message.from.age }} ans</i>
+          </h4>
+
+          <p mat-line *ngIf="message.action === undefined">
+            <span> {{ message.content }} </span>
+          </p>
+          <p
+            mat-line
+            *ngIf="message.action === action.JOINED"
+            class="chat-notification"
+          >
+            <span>
+              <b>{{ message.from.name }}</b> joined to the conversation.
+            </span>
+          </p>
+          <p
+            mat-line
+            *ngIf="message.action === action.RENAME"
+            class="chat-notification"
+          >
+            <span>
+              <b>{{ message.content.previousUsername }}</b> is now
+              <b>{{ message.content.username }}</b>
+            </span>
+          </p>
+        </mat-list-item>
+      </mat-list>
+      <div class="chat-footer-container">
+        <mat-icon>message</mat-icon>
+        <mat-form-field class="chat-input">
+          <input
+            matInput
+            #inputMessage
+            maxlength="140"
+            placeholder="Ecris ton message.."
+            [(ngModel)]="messageContent"
+            (keyup.enter)="sendMessage(messageContent)"
+          />
+          <mat-hint align="end">{{ inputMessage.value.length }}/140</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
 </div>

@@ -24,6 +24,11 @@
     font-size: 2em;
     margin-bottom: 30px;
   }
+
+  .chat-list {
+    width: 65vw;
+    height: 70%;
+  }
 }
 
 @media only screen and (max-width: 1279px) {
@@ -49,6 +54,11 @@
     font-size: 1.5em;
     margin: 30px;
     width: 75%;
+  }
+
+  .chat-list {
+    width: 75vw;
+    height: 60%;
   }
 }
 
@@ -76,4 +86,53 @@
   background-color: #fff;
   opacity: 0.2;
   z-index: -1;
+}
+
+.chat-list-item {
+  margin: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.chat-container {
+  width: 50%;
+}
+
+.chat-footer-container {
+  .chat-input {
+    font-size: 1.5em;
+    width: 60vw;
+  }
+
+  position: fixed;
+  bottom: 15px;
+  left: 15%;
+}
+
+.chat-list {
+  position: fixed;
+  top: 120px;
+  left: 15%;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
