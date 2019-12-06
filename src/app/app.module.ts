@@ -10,7 +10,14 @@ import { ChatEtudiantComponent } from "./chat-etudiant/chat-etudiant.component";
 import { AboutPageComponent } from "./about-page/about-page.component";
 import { RessourcesComponent } from "./ressources/ressources.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatButtonModule, MatIconModule } from "@angular/material";
+import {
+  MatButtonModule,
+  MatIconModule,
+  MatFormFieldModule,
+  MatInputModule
+} from "@angular/material";
+import { ReactiveFormsModule } from "@angular/forms";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -27,7 +34,11 @@ import { MatButtonModule, MatIconModule } from "@angular/material";
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
